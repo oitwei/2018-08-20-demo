@@ -30,19 +30,17 @@ $user_score = [
 // $scoreIndexId = [];
 $id = 0;
 $i = 0;
+$output = [];
 foreach ($user_score as $value_score) {
-    $id = $value_score['id'];
-    // $scoreIndexId[$id]['score'] = $value_score['score'];
-    // $scoreIndexId[$id][] = $value;
-    // print_r(($value_score));
     foreach ($user_list as $value_list) {
-        if ($user_list[$i]['id'] == $id) {
-            // $user_list[$i]['id'] =$id;
-            $user_list[$i]['score'] = $value_score['score'];
-            $i++;
+        if ($value_list['id'] === $value_score['id']) {
+            $tempArray['id'] = $value_list['id'];
+            $tempArray['name'] = $value_list['name'];
+            $tempArray['score'] = $value_score['score'];
         }
 
     }
+    $output[] = $tempArray;
 }
 
-print_r($user_list);
+print_r($output);

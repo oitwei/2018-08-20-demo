@@ -1,6 +1,10 @@
 <?php
-$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-$rand_keys = array_rand($input, 2);
-echo $input[$rand_keys[0]] . "\n";
-echo $input[$rand_keys[1]] . "\n";
-?>
+$x = [900, 1500, 2300];
+foreach ($x as $value) {
+    if ($value >= 1000) {
+        echo $value*0.85 , PHP_EOL;
+    } else {
+        echo $value , PHP_EOL;
+    }
+    
+}

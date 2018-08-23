@@ -4,21 +4,16 @@ $QuestionNumber = 1;
 
 $QuestionName = $QuestionNumber.'.�аݱz�X��:<br>'; 
 
-$QuestionRead_Boolean = true;
+$QuestionIsRead = true;
 
 echo $QuestionName;
 
 /*echo $QuestionNumber.'.'.$QuestionName;*/
 
-if ($QuestionRead_Boolean) {
-
+if ($QuestionIsRead) {
     echo '�D�ؤw�ݹL';
-
-}
-else {
-
+} else {
     echo '�D�إ��ݹL';
-
 }
 
 ?>

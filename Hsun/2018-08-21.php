@@ -1,19 +1,19 @@
 <?php
 $users = [
     [
-    'id' => 1,
-    'name' => '小明',
-    'has_cat' => true
+        'id' => 1,
+        'name' => '小明',
+        'has_cat' => true
     ],
     [
-    'id' => 2,
-    'name' => '小華',
-    'has_cat' => true
+        'id' => 2,
+        'name' => '小華',
+        'has_cat' => true
     ],
     [
-    'id' => 3,
-    'name' => '小美',
-    'has_cat' => false
+        'id' => 3,
+        'name' => '小美',
+        'has_cat' => false
     ],
     ];
 

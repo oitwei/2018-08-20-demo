@@ -1,36 +1,35 @@
 <?php
-    $noArray = [5,88,9];
-    $int = 99;
-    
-    function arrayIndex($search, $array)
-    {
-        if (in_array($search, $array)) {
+$numberArray = [5,88,9];
+$number = 99;
+
+function getArrayIndex($search, $array)
+{
+    if (in_array($search, $array)) {
         $anser = in_array($search, $array);
         return $anser;
-        }
-        return 0;    
     }
+    return 0;    
+}
 
-    function arrayExist(
-        $index, 
-        $array
-    ) {
-        if (in_array($index, $array)) {
-            $anser = in_array($index, $array);
-            return '存在';
-        }
-        return '不存在';
-    }
+function getArrayValueExistence(
+    $index, 
+    $array
+) { if (in_array($index, $array)) {
+        $anser = in_array($index, $array);
+        return '存在';
+} 
+    return '不存在';    
+}
 
-    $arrayValue = arrayIndex($int, $noArray);
-    
-    if ($arrayValue === 0) {
+$arrayValue = arrayIndex($int, $noArray);
 
-        echo $int.'不在索引<br>';
-    } else {
-        echo $int.'在索引'.$arrayValue.'的位置<br>';
-    }
+if ($arrayValue === 0) {
 
-    $exist = arrayExist($int, $noArray);
+    echo $int.'不在索引<br>';
+} else {
+    echo $int.'在索引'.$arrayValue.'的位置<br>';
+}
 
-    echo $exist;
+$exist = arrayExist($int, $noArray);
+
+echo $exist;
