@@ -33,18 +33,27 @@ $user_score = [
     ]
 ];
 
-function usermapping($user_list , $user_score)
+function usermapping($user_list, $user_score)
 {
-    $output=[];
-   foreach($user_list as $user_listId)
-    {
-        foreach($user_score as $user_scoreId){
+    $output = [];
+    foreach ($user_list as $user_listId) {
 
-            if ($user_listId['id'] == $user_scoreId['id'])
-            {   
-                $output[$user_listId['id']]=$user_listId['name'] . '分數'.$user_scoreId['score'];
-            }
+        foreach ($user_score as $user_scoreId) {
+            
+            $userData = [];
+            
+            if ($user_listId['id'] == $user_scoreId ['id'] ) {   
+            $a = [];
+            $a['id'] = $user_listId['id'] ;
+            $a['name'] = $user_listId['name'] ;
+            $a['score'] =  $user_scoreId['score'] ;
+            // $userData[] = $user_listId ;
+            // $userData[] = $user_listId['name'] ;
+            // $userData[] = $user_scoreId['score'] ;
+            // var_dump($a);
+            }            
         }
+        $output[] = $a;
     }
     return $output;
 }
