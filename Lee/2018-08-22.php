@@ -43,14 +43,14 @@ function usermapping($user_list, $user_score)
             $userData = [];
             
             if ($user_listId['id'] == $user_scoreId ['id'] ) {   
-            $a = [];
-            $a['id'] = $user_listId['id'] ;
-            $a['name'] = $user_listId['name'] ;
-            $a['score'] =  $user_scoreId['score'] ;
-            // $userData[] = $user_listId ;
-            // $userData[] = $user_listId['name'] ;
-            // $userData[] = $user_scoreId['score'] ;
-            // var_dump($a);
+                $a = [];
+                $a['id'] = $user_listId['id'] ;
+                $a['name'] = $user_listId['name'] ;
+                $a['score'] =  $user_scoreId['score'] ;
+                // $userData[] = $user_listId ;
+                // $userData[] = $user_listId['name'] ;
+                // $userData[] = $user_scoreId['score'] ;
+                // var_dump($a);
             }            
         }
         $output[] = $a;
