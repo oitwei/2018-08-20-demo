@@ -11,7 +11,7 @@ GET
     <br>
     密碼:
     <br>
-    <input type="text" name="passward" value="GET">
+    <input type="text" name="password" value="GET">
     <br>
     <input type="submit" value="送出">
 </form>
@@ -24,7 +24,7 @@ POST
     <input type="text" name="id" value="POST" >
     <br>
     密碼:<br>
-    <input type="text" name="passward" value="POST" >
+    <input type="text" name="password" value="POST" >
     <br>
     <input type="submit" value="送出">
 </form>
@@ -32,10 +32,10 @@ POST
 <?PHP
 
 $idGet = $_GET['id'];
-$passwardGet = $_GET['passward'];
+$passwordGet = $_GET['password'];
 echo '帳號：' . $idGet . '密碼：' . $passwardGet . '<br>' ;
 $idPost = $_POST['id'];
-$passwardPost = $_POST['passward'];
+$passwordPost = $_POST['password'];
 echo '帳號：' . $idPost . '密碼：' . $passwardPost;
 
 ?>
