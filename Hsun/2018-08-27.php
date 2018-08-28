@@ -29,7 +29,7 @@ POST
     <input type="submit" value="送出">
 </form>
 
-<?PHP
+<?php
 
 $idGet = $_GET['id'];
 $passwordGet = $_GET['password'];

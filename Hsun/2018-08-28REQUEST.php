@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 if ('GET' === $_SERVER['REQUEST_METHOD']) {
     $idGet = $_GET['id'];
