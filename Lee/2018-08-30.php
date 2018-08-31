@@ -2,6 +2,7 @@
 $file = fopen('2018-08-30-question.txt', "r");
 $array = [];
 $array2 = [];
+$array3 = [];
 $agesum = 0;
 $ageaverage = 0;
 $weightsum = 0;
@@ -14,8 +15,7 @@ while (($buffer = fgets($file)) !== false) {
 
 
 foreach ($array as $value) { 
-    
-    if ($i>0) {
+    if ($i > 0) {
         $array2[] = explode(',', $value);
     }
     $i++;
