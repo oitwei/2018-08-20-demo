@@ -16,8 +16,8 @@ while (($buffer = fgets($file)) !== false) {
 
 foreach ($array as $value) { 
     if ($i === 0) {
-        $array3=explode(',', $value);
-
+        $array3[] = explode(',', $value);
+    
     }
     if ($i > 0) {
         $array2[] = explode(',', $value);
@@ -25,12 +25,16 @@ foreach ($array as $value) {
     
     $i++;
 }
+$array4[] = array_flip($array3);
+
+
 foreach ($array2 as $value) {
-    $array3['姓名'] = $value[0];
-    $array3['年紀'] = $value[1];
-    $array3['體重'] = $value[2];
-    $agesum = intval($array3['年紀']) + $agesum;
-    $weightsum = intval($array3['體重']) + $weightsum;
+    $array4['姓名'] = $value[0];
+    $array4['年紀'] = $value[1];
+    $array4['體重'] = $value[2];
+    $agesum = intval($array4['年紀']) + $agesum;
+    $weightsum = intval($array4['體重']) + $weightsum;
+    var_dump($array4);
 
 }
 
