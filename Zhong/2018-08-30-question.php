@@ -18,9 +18,12 @@ while (($buffer = fgets($handle)) !== false) {
 
     $csv_data[] = explode(',', $buffer);
 }
-
-foreach ($columns_name as $index => $name) {
-    $output[$name] = array_column($csv_data, $index);
+var_dump($csv_data);
+foreach ($columns_name as $index => $columnName) {
+    $temp = array_column($csv_data, $index);
+    $output[$columnName] = $temp ;
+    var_dump($temp);
+    exit();
 }
 
 fclose($handle);
