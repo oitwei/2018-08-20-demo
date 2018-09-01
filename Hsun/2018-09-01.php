@@ -42,9 +42,16 @@ foreach ($arrayValue as $value) {
 $pepole = count($arrayValue);
 $ageAverage = $ageSum / count($arrayValue);
 $weightAverage = $weightSum / count($arrayValue);
-echo '總共' . $pepole . '人' . PHP_EOL;
-echo '平均年紀' . $ageAverage . '歲' . PHP_EOL;
-echo '平均公斤' . $weightAverage . '公斤' . PHP_EOL;
+$pepolePrint =  '總共' . $pepole . '人' . PHP_EOL;
+$ageAveragePrint = '平均年紀' . $ageAverage . '歲' . PHP_EOL;
+$weightAveragePrint = '平均公斤' . $weightAverage . '公斤' . PHP_EOL;
 
 
-
+$columnAnser = [$pepolePrint, $ageAveragePrint, $weightAveragePrint];
+$file = fopen(__DIR__ . '/2018-08-31-anser.txt', 'w');
+$handle = $file;
+foreach ($columnAnser as $value) {
+    $buffer = $value;
+    fwrite($handle, $buffer);
+}
+fclose($handle);
