@@ -1,15 +1,17 @@
 <?php
 
-$file = fopen(__DIR__ . '/123.txt', 'r');
+$file = fopen(__DIR__ . '/../Zhong/2018-08-30-question.txt', 'r');
 $handle = $file;
 $arrayData = [];
 while (($buffer = fgets($handle)) !== false) {
-    $arrayData[] = $buffer;
+    $arrayData[] = trim($buffer);
+    // var_dump(trim($buffer));
+    // exit;
 }
 fclose($handle);
 $arrayTitle = $arrayData[0];
 unset($arrayData[0]); 
-$arrayTitle = (explode(",", $arrayTitle));
+$arrayTitle = explode(",", $arrayTitle);
 
 foreach ($arrayData as $value) {
     $arrayValue[] = explode(",", $value);
@@ -28,7 +30,10 @@ foreach ($arrayValue as $value) {
 }
 $i = 0;
 $weightTemp = 0;
-$ageSume =0;
+$ageSum = 0;
+$weightSum = 0;
+$ageTemp = 0;
+
 foreach ($arrayValue as $value) {
     $ageTemp = intval($arrayTitleIndex['age'][$i]);
     $ageSum = $ageSum + $ageTemp;
@@ -36,8 +41,6 @@ foreach ($arrayValue as $value) {
     $weightSum = $weightSum + $weightTemp;
     $i++;
 }
-
-
 
 $ageAverage = $ageSum / count($arrayValue);
 $weightAverage = $weightSum / count($arrayValue);

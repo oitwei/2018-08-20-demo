@@ -1,4 +1,4 @@
-﻿name,age,weight
+name,age,weight
 陳泓仲,24,64
 李威翰,14,50
 尋敬恆,64,65
