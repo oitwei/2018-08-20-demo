@@ -39,11 +39,11 @@ foreach ($arrayValue as $value) {
 
 
 
-// $ageAverage = $ageSum / count($arrayValue);
-// $weightAverage = $weightSum / count($arrayValue);
-// echo '總共' . count($arrayValue) . '人' . PHP_EOL;
-// echo '平均年紀' . $ageAverage . '歲' . PHP_EOL;
-// echo '平均公斤' . $weightAverage . '公斤' . PHP_EOL;
+$ageAverage = $ageSum / count($arrayValue);
+$weightAverage = $weightSum / count($arrayValue);
+echo '總共' . count($arrayValue) . '人' . PHP_EOL;
+echo '平均年紀' . $ageAverage . '歲' . PHP_EOL;
+echo '平均公斤' . $weightAverage . '公斤' . PHP_EOL;
 
 
 
