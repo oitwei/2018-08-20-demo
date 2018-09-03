@@ -44,13 +44,13 @@ echo '平均體重'. $weightaverage ;
 $peopleAccount = '人數:' . $usercount . "\n";
 $peopleAverageAge = '平均年紀' . $ageaverage . "\n";
 $perpleAverageWeight = '平均體重'. $weightaverage . "\n";
-$mappingValue = print_r($arrayMapping, false);
+// $mappingValue = print_r($arrayMapping);
 
 $newfile = fopen('newfile.txt', "w");
 fwrite($newfile, $peopleAccount);
 fwrite($newfile, $peopleAverageAge);
 fwrite($newfile, $perpleAverageWeight);
-fwrite($newfile, $mappingValue);
+// fwrite($newfile, $mappingValue);
 
 fclose($file);
 fclose($newfile);
