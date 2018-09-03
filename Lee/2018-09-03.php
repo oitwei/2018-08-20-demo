@@ -1,8 +1,8 @@
 <?php
 $file = fopen('2018-08-30-question.txt', "r");
 $array = [];
-$array2 = [];
-$array3 = [];
+$arrayValue = [];
+$arrayTittle = [];
 $agesum = 0;
 $ageaverage = 0;
 $weightsum = 0;
@@ -16,21 +16,21 @@ while (($buffer = fgets($file)) !== false) {
 
 foreach ($array as $value) { 
     if ($i === 0) {
-        $array3[] = explode(',', $value);
+        $arrayTittle[] = explode(',', $value);
     
     }
     if ($i > 0) {
-        $array2[] = explode(',', $value);
+        $arrayValue[] = explode(',', $value);
     }
     
     $i++;
 }
-foreach ($array2 as $value) {
-    $array4['姓名'] = $value[0];
-    $array4['年紀'] = $value[1];
-    $array4['體重'] = $value[2];
-    $agesum = intval($array4['年紀']) + $agesum;
-    $weightsum = intval($array4['體重']) + $weightsum;
+foreach ($arrayValue as $value) {
+    $arrayMapping['姓名'] = $value[0];
+    $arrayMapping['年紀'] = $value[1];
+    $arrayMapping['體重'] = $value[2];
+    $agesum = intval($arrayMapping['年紀']) + $agesum;
+    $weightsum = intval($arrayMapping['體重']) + $weightsum;
     
 
 }
@@ -41,5 +41,17 @@ $usercount = (count($array)-1);
 echo '人數:' . $usercount;
 echo '平均年紀' . $ageaverage;
 echo '平均體重'. $weightaverage ;
-fclose($file)
+$peopleAccount = '人數:' . $usercount . "\n";
+$peopleAverageAge = '平均年紀' . $ageaverage . "\n";
+$perpleAverageWeight = '平均體重'. $weightaverage . "\n";
+$mappingValue = print_r($arrayMapping, false);
+
+$newfile = fopen('newfile.txt', "w");
+fwrite($newfile, $peopleAccount);
+fwrite($newfile, $peopleAverageAge);
+fwrite($newfile, $perpleAverageWeight);
+fwrite($newfile, $mappingValue);
+
+fclose($file);
+fclose($newfile);
 ?>

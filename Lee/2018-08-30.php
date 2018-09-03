@@ -1,8 +1,8 @@
 <?php
 $file = fopen('2018-08-30-question.txt', "r");
 $array = [];
-$array2 = [];
-$array3 = [];
+$arrayValue = [];
+$arrayTittle = [];
 $agesum = 0;
 $ageaverage = 0;
 $weightsum = 0;
@@ -16,25 +16,22 @@ while (($buffer = fgets($file)) !== false) {
 
 foreach ($array as $value) { 
     if ($i === 0) {
-        $array3[] = explode(',', $value);
+        $arrayTittle[] = explode(',', $value);
     
     }
     if ($i > 0) {
-        $array2[] = explode(',', $value);
+        $arrayValue[] = explode(',', $value);
     }
     
     $i++;
 }
-$array4[] = array_flip($array3);
-
-
-foreach ($array2 as $value) {
-    $array4['姓名'] = $value[0];
-    $array4['年紀'] = $value[1];
-    $array4['體重'] = $value[2];
-    $agesum = intval($array4['年紀']) + $agesum;
-    $weightsum = intval($array4['體重']) + $weightsum;
-    var_dump($array4);
+foreach ($arrayValue as $value) {
+    $arrayMapping['姓名'] = $value[0];
+    $arrayMapping['年紀'] = $value[1];
+    $arrayMapping['體重'] = $value[2];
+    $agesum = intval($arrayMapping['年紀']) + $agesum;
+    $weightsum = intval($arrayMapping['體重']) + $weightsum;
+    
 
 }
 
