@@ -1,6 +1,6 @@
 <?php
 $file = fopen('2018-08-30-question.txt', "r");
-$array = [];
+$arrayData = [];
 $arrayValue = [];
 $arrayTittle = [];
 $agesum = 0;
@@ -9,12 +9,11 @@ $weightsum = 0;
 $weightaverage = 0;
 $i = 0;
 while (($buffer = fgets($file)) !== false) {
-    $array[] = $buffer;   
+    $arrayData[] = $buffer;   
     
 }
 
-
-foreach ($array as $value) { 
+foreach ($arrayData as $value) { 
     if ($i === 0) {
         $arrayTittle[] = explode(',', $value);
     
@@ -35,11 +34,23 @@ foreach ($arrayValue as $value) {
 
 }
 
-$ageaverage = intval($agesum/(count($array)-1));
-$weightaverage = intval($weightsum/(count($array)-1));
+$ageaverage = intval($agesum/$usercount);
+$weightaverage = intval($weightsum/$usercount);
 $usercount = (count($array)-1);
 echo '人數:' . $usercount;
 echo '平均年紀' . $ageaverage;
 echo '平均體重'. $weightaverage ;
-fclose($file)
+$peopleAccount = '人數:' . $usercount . "\n";
+$peopleAverageAge = '平均年紀' . $ageaverage . "\n";
+$perpleAverageWeight = '平均體重'. $weightaverage . "\n";
+// $mappingValue = print_r($arrayMapping);
+
+$newfile = fopen('.txt', "w");
+fwrite($newfile, $peopleAccount);
+fwrite($newfile, $peopleAverageAge);
+fwrite($newfile, $perpleAverageWeight);
+// fwrite($newfile, $mappingValue);
+
+fclose($file);
+fclose($newfile);
 ?>
